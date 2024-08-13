@@ -1,0 +1,150 @@
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    text-align: center;
+}
+
+.subheading {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+}
+
+.button {
+    padding: 8px 16px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.editBtn {
+    background-color: #4CAF50;
+}
+
+.loginBtn {
+    background-color: #008CBA;
+}
+
+.changeStatusBtn {
+    background-color: #ff9800;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.closeBtn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.saveBtn {
+    background-color: #4CAF50;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .modalContent {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    .heading {
+        font-size: 18px;
+    }
+    .subheading {
+        font-size: 18px;
+    }
+    .table {
+        font-size: 12px;
+    }
+    .button {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}

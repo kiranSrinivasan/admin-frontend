@@ -1,0 +1,195 @@
+body {
+  display: flex;
+  height: 100vh;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  background-image: url('web eg - 02.jpg'); /* Update this path to your local image */
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(10px); 
+}
+
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  color: #fddd0f;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+  position: relative; /* Ensure dropdown menu is positioned relative to list item */
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position the menu below the parent item */
+  right: 0; /* Align dropdown with the right side */
+  background: rgba(0, 0, 0, 0.9); /* Slightly lighter background for readability */
+  border-radius: 5px;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure dropdown appears above other content */
+  width: 150px; /* Adjust width as needed */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  transform: translateY(10px); /* Optional: Add a slight drop effect */
+}
+
+.sidebar ul li:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Remove the drop effect when visible */
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #444;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 5px 10px; /* Smaller padding for compact design */
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #555;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  flex: 1;
+}
+
+header .breadcrumb {
+  margin-bottom: 40px;
+  color: #888;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #110202;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  width: calc(33.33% - 20px); /* Adjust card width */
+  min-width: 200px; /* Ensure minimum width for smaller screens */
+  flex: 1;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+    padding: 10px;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* New CSS for centering content */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.center-content .main-content {
+  margin: 0;
+  width: auto;
+  padding: 0;
+}

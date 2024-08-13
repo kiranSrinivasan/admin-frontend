@@ -1,0 +1,86 @@
+/* Ensure that the body takes up the full height of the viewport */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Flexbox container to center content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Style for the main content area */
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Center the headings and text */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin: 0;
+}
+
+/* Style for the buttons to be more centered and consistent */
+.button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: #007bff;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Center the modal on the screen */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .main-content {
+      padding: 10px;
+  }
+
+  .button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  .modalContent {
+      width: 95%;
+  }
+}
