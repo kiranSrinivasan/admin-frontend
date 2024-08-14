@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { storage, AUTH_TOKEN } from '../storage';
 
 const axiosInstance = axios.create({

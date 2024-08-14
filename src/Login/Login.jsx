@@ -65,6 +65,7 @@ const Login = () => {
       opacity: 0.1,
       zIndex: -1,
     },
+    
     loginContainer: {
       position: 'relative',
       zIndex: 1,
@@ -187,7 +188,7 @@ const Login = () => {
                 placeholder="Enter your username"
               />
             </div>
-            
+
             <div style={styles.inputGroup}>
               <label style={styles.label} htmlFor="password">Password</label>
               <input
