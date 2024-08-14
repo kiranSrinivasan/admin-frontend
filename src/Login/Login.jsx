@@ -1,37 +1,43 @@
 import React, { useState } from 'react';
+import axiosInstance from '../config/xhr-interceptors';
+import { API_VALIDATE_USER } from '../config/api-constants';
+import { storage, AUTH_TOKEN} from '../storage';
+import{REACT_APP_BASE_URL} from '../environment/env'
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
+    let formData = new FormData();
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+    };
+    // Common form data
+    formData.append('username', username);
+    formData.append('password',password);
 
-    // Simulate successful login
-    alert('Login successful!');
+    try {
+      const response = await axiosInstance.post(
+        `${REACT_APP_BASE_URL}${API_VALIDATE_USER}`,
+        formData,
+        config
+      );
     
-    // Example fetch to send form data to the server
-    /*
-    fetch('/login-endpoint', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    }).then(response => {
-      if (response.ok) {
-        alert('Login successful!');
-        window.location.href = '/admin-dashboard';
-      } else {
-        alert('Login failed!');
+      if (response.status === 200) {
+        // Handle the success case here
+        storage.setItem(AUTH_TOKEN, response.token);
+        console.log('Request was successful:', response.data);
+        // Add any other logic you need when the status is 200
       }
-    }).catch(error => {
-      console.error('Error:', error);
-      alert('Login failed!');
-    });
-    */
+    } catch (error) {
+      // Handle error here
+      console.error('An error occurred:', error);
+    }
+    
+   
   };
 
   const styles = {
